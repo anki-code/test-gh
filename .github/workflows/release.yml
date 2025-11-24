@@ -21,6 +21,11 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
+      - name: Create file qwe
+        run: |
+          touch qwe
+          echo 1 > qwe
+          
       - name: Upload qwe to release
         if: github.event_name == 'release'
         uses: actions/upload-release-asset@v1
