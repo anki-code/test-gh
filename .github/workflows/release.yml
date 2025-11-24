@@ -32,12 +32,12 @@ jobs:
         run: uv pip install --system python-appimage
 
       - name: Create xonsh AppImage
-        run: python -m python_appimage build app -p 3.11 ./appimage
+        run: |
+          cd ./appimage && echo $PWD > requirements.txt && cat pre-requirements.txt >> requirements.txt
+          python -m python_appimage build app -p 3.11 ./appimage
         
       - name: Create file qwe
-        run: |
-          touch qwe
-          echo 1 > qwe
+        run: ls -la && echo $PWD
           
       - name: Upload qwe to release
         if: github.event_name == 'release'
