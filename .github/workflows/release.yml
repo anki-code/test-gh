@@ -29,7 +29,7 @@ jobs:
         with:
           enable-cache: true
       - name: Install python-appimage package
-        run: uv pip install --system -e git+https://github.com/niess/python-appimage
+        run: uv pip install --system python-appimage
 
       - name: Create xonsh AppImage
         run: python -m python_appimage build app -p 3.11 ./appimage
