@@ -33,7 +33,7 @@ jobs:
 
       - name: Create xonsh AppImage
         run: |
-          cd ./appimage && echo $PWD > requirements.txt && cat pre-requirements.txt >> requirements.txt
+          echo $PWD > ./appimage/requirements.txt && cat ./appimage/pre-requirements.txt >> ./appimage/requirements.txt
           python -m python_appimage build app -p 3.11 ./appimage
         
       - name: Create file qwe
